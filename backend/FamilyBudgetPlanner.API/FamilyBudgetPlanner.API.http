@@ -1,0 +1,6 @@
+@FamilyBudgetPlanner.API_HostAddress = http://localhost:5033
+
+GET {{FamilyBudgetPlanner.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
