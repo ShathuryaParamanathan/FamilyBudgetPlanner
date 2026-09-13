@@ -1,4 +1,5 @@
 using FamilyBudgetPlanner.API.Models;
+using FamilyBudgetPlanner.API.DTOs;
 using FamilyBudgetPlanner.API.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -37,8 +38,16 @@ public class ExpensesController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateExpense(Expense expense)
+    public async Task<IActionResult> CreateExpense(CreateExpenseDto expenseDto)
     {
+        var expense = new Expense
+        {
+            Amount = expenseDto.Amount,
+            Category = expenseDto.Category,
+            Description = expenseDto.Description,
+            Date = expenseDto.Date
+        };
+
         _context.Expenses.Add(expense);
         await _context.SaveChangesAsync();
 
@@ -47,6 +56,7 @@ public class ExpensesController : ControllerBase
             new { id = expense.Id },
                 expense);
     }
+
 
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateExpense(
@@ -85,7 +95,7 @@ public class ExpensesController : ControllerBase
         return Ok(expense);
     }
 
-     [HttpDelete("{id}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteExpense(int id)
     {
         var expense = await _context.Expenses.FindAsync(id);

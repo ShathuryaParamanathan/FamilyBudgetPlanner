@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FamilyBudgetPlanner.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06aec2bd1a74da18e9456a4e491b5e8a660d56d4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ae9b9fb119865036f353194a50261d17d0b51cc")]
 [assembly: System.Reflection.AssemblyProductAttribute("FamilyBudgetPlanner.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FamilyBudgetPlanner.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
